@@ -32,9 +32,9 @@
 <div class="card">
   <h1>Tikki Privacy Policy</h1>
   <p class="meta">App: Tikki – Daily Routine &amp; Habits (Android, package <code>com.jotonsutradhar.tikki</code>)<br>
-  Developer: Joton Sutradhar · Effective date: 1 November 2026</p>
+  Developer: Joton Sutradhar · Effective date: 3 November 2026</p>
 
-  <div class="summary"><p><strong>In short:</strong> Tikki works entirely on your phone. It has no account and no servers, and it does not collect, sell or share your personal data. Everything you enter stays on your device unless you choose to export it.</p></div>
+  <div class="summary"><p><strong>In short:</strong> Tikki works entirely on your phone. It has no Tikki account and no servers, and the developer does not collect, sell or share your personal data. Everything you enter stays on your device unless you choose to export it or back it up to your own Google Drive.</p></div>
 
   <h2>1. Information Tikki stores</h2>
   <p>To work, Tikki saves the following <strong>only on your device</strong>, in the app's private storage:</p>
@@ -45,16 +45,18 @@
     <li>Your settings, such as reminders, theme and language.</li>
     <li>If you turn on App lock: your PIN, stored only as a salted, one-way hash in Android's encrypted storage. The PIN itself is never saved.</li>
   </ul>
-  <p>The developer has no access to any of this information. It is never uploaded to the developer or to any third-party server.</p>
+  <p>The developer has no access to any of this information. It is never sent to the developer. It reaches a third party only if you turn on Google Drive backup (section 5) or use voice input (section 4).</p>
 
   <h2>2. Information we collect</h2>
-  <p>We do <strong>not</strong> collect any personal or device data. Tikki contains no analytics, advertising or tracking tools, and it has no user accounts.</p>
+  <p>We do <strong>not</strong> collect any personal or device data. Tikki contains no analytics, advertising or tracking tools, and it has no Tikki accounts.</p>
 
   <h2>3. Permissions and why they are used</h2>
   <table>
     <tr><th>Permission</th><th>Why</th></tr>
+    <tr><td>Internet</td><td>Only for the optional Google Drive backup. The rest of Tikki works offline.</td></tr>
     <tr><td>Notifications</td><td>To show reminders before and when your activities start, missed-activity checks and summaries.</td></tr>
     <tr><td>Alarms &amp; reminders (exact alarms)</td><td>So reminders arrive on time, even in battery-saving mode.</td></tr>
+    <tr><td>Full-screen alarm</td><td>Only for items you set to "Ring as alarm", so the alarm can wake the screen and show Stop, Snooze and Done.</td></tr>
     <tr><td>Run at startup</td><td>To restore your scheduled reminders after the phone restarts.</td></tr>
     <tr><td>Vibration</td><td>For reminder alerts and button feedback.</td></tr>
     <tr><td>Biometrics (fingerprint / face)</td><td>Optional, to unlock the app when App lock is on. Verification is handled entirely by Android; Tikki never receives your fingerprint or face data.</td></tr>
@@ -74,8 +76,17 @@
   </ul>
   <p>Once shared, that copy is handled by the app or service you chose, under its own privacy policy.</p>
 
+  <h3>Optional Google Drive backup</h3>
+  <p>If you connect Google Drive, you sign in with your Google account and allow Tikki to use its own private app folder in your Drive (the <code>drive.appdata</code> permission). Tikki cannot see or change any of your other Drive files.</p>
+  <ul>
+    <li><strong>What is sent:</strong> a backup of the data listed in section 1, except your App lock PIN, including your profile photo if you added one. It is sent only when you tap Back up now.</li>
+    <li><strong>Where it goes:</strong> directly from your phone to your Google account over an encrypted connection. It never passes through the developer, who cannot access it. Google handles it under its own privacy policy.</li>
+    <li><strong>How Google data is used:</strong> Tikki uses this access only to save, find, restore and delete your backup, and to show which account is connected. It is not used for advertising or shared with anyone, and it is not used to train AI models.</li>
+    <li><strong>Removing it:</strong> tap <em>Settings → Google Drive → Delete backup from Drive</em>. <em>Disconnect Google Drive</em> withdraws Tikki's access but leaves the backup in Drive. You can also remove app data in your Drive settings under Manage apps.</li>
+  </ul>
+
   <h2>6. Data retention and deletion</h2>
-  <p>Your data stays on your device until you delete it. You can erase everything at any time in <em>Settings → Erase all data</em>, or by uninstalling Tikki, which removes all of its stored data from your phone. Backup files you exported are kept wherever you saved them until you delete them.</p>
+  <p>Your data stays on your device until you delete it. You can erase everything at any time in <em>Settings → Erase all data</em>, or by uninstalling Tikki, which removes all of its stored data from your phone. Backup files you exported, and any Google Drive backup, are kept until you delete them.</p>
 
   <h2>7. Security</h2>
   <p>Data is kept in the app's private storage, which other apps cannot read. You can add App lock with a PIN or fingerprint/face and hide reminder text on the lock screen. Please keep exported backup files somewhere safe, as anyone with the file can read its contents.</p>
@@ -87,7 +98,7 @@
   <p>If this policy changes, the updated version will be published at this same address with a new effective date. If a change ever involved collecting data, it would be explained in the app before taking effect.</p>
 
   <h2>10. Contact</h2>
-  <p>Questions about this policy or your privacy: <strong>Joton Sutradhar</strong>, <a href="mailto:jotonsutradharjoy@gmail.com">jotonsutradharjoy@gmail.com</a> (jotonsutradharjoy@gmail.com).</p>
+  <p>Questions about this policy or your privacy: <strong>Joton Sutradhar</strong>, <a href="mailto:jotonsutradharjoy@gmail.com">jotonsutradharjoy@gmail.com</a>.</p>
 </div>
 <footer>© 2026 Tikki</footer>
 </main>
