@@ -4,94 +4,170 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tikki Privacy Policy</title>
+<meta name="description" content="Tikki works on your phone. It has no account and no servers, and it does not collect, sell or share your personal data.">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="assets/img/icon.png">
 <style>
-  :root { --text:#0f1222; --muted:#5b6078; --accent:#4f46e5; --bg:#f6f7fb; --card:#fff; --line:#e6e8f0; }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--text);
-         font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 40px 20px 64px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding: 32px 28px; }
-  h1 { font-size: 30px; line-height:1.2; margin: 0 0 6px; letter-spacing:-0.4px; }
-  .meta { color:var(--muted); margin: 0 0 24px; font-size: 14px; }
-  h2 { font-size: 19px; margin: 32px 0 8px; }
-  p, li { color: #2a2e44; }
-  ul { padding-left: 22px; margin: 8px 0; }
-  li { margin: 4px 0; }
-  .summary { background:#eef0ff; border-radius:10px; padding: 14px 18px; margin: 0 0 8px; }
-  .summary p { margin:0; color:#2b2f6b; }
-  table { width:100%; border-collapse: collapse; margin: 10px 0; font-size: 15px; }
-  th, td { text-align:left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
-  th { color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .4px; }
-  a { color: var(--accent); }
-  footer { color:var(--muted); font-size: 13px; text-align:center; margin-top: 20px; }
-  @media (max-width: 520px) { .card { padding: 24px 18px; } h1 { font-size: 25px; } }
+@font-face{font-family:Poppins;font-weight:500;font-display:swap;src:url(assets/fonts/Poppins-500.ttf)}
+@font-face{font-family:Poppins;font-weight:600;font-display:swap;src:url(assets/fonts/Poppins-600.ttf)}
+@font-face{font-family:Poppins;font-weight:700;font-display:swap;src:url(assets/fonts/Poppins-700.ttf)}
+@font-face{font-family:Poppins;font-weight:800;font-display:swap;src:url(assets/fonts/Poppins-800.ttf)}
+:root{--ink:#14162b;--body:#3b3f5c;--muted:#5d6280;--indigo:#4f46e5;--bg:#f4f4fb;--card:#fff;--line:#e6e7f2;--grad:linear-gradient(120deg,#4f46e5,#7c3aed 55%,#a855f7)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:20px}
+body{margin:0;background:var(--bg);color:var(--ink);font:500 16.5px/1.72 Poppins,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+a{color:var(--indigo)}
+a:focus-visible{outline:3px solid #fbbf24;outline-offset:3px}
+header{position:relative;overflow:hidden;background:var(--grad);color:#fff;border-radius:0 0 40px 40px;padding-bottom:96px}
+header::before{content:"";position:absolute;width:520px;height:520px;right:-140px;top:-230px;border-radius:50%;background:rgba(255,255,255,.08)}
+nav{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;padding:24px 0}
+.brand{display:flex;align-items:center;gap:12px;color:#fff;font-weight:800;font-size:23px;text-decoration:none}
+.brand img{width:42px;height:42px;border-radius:12px}
+.back{color:#fff;font-size:15px;font-weight:600}
+.title{position:relative;z-index:1;padding-top:44px}
+h1{margin:0;font-size:clamp(38px,5.4vw,58px);font-weight:800;line-height:1.12;letter-spacing:-.02em}
+.meta{margin:14px 0 0;color:#ece9ff;font-size:15.5px}
+.meta code{font:inherit;overflow-wrap:anywhere}
+.promises{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:-58px;position:relative;z-index:2}
+.promises div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;box-shadow:0 14px 34px rgba(40,30,120,.08)}
+.promises b{display:block;font-size:17px;font-weight:700}
+.promises span{font-size:14px;color:var(--muted);line-height:1.5;display:block}
+.layout{display:grid;grid-template-columns:250px 1fr;gap:28px;align-items:start;margin-top:28px;padding-bottom:64px}
+.toc{display:block;position:sticky;top:20px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px}
+.toc b{display:block;font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.toc a{display:block;padding:5px 0;font-size:14.5px;font-weight:600;color:var(--ink);text-decoration:none;line-height:1.4}
+.toc a:hover{color:var(--indigo)}
+article{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:38px 42px;min-width:0}
+.summary{background:#eeedff;border-radius:16px;padding:18px 22px;color:#2f2c80}
+.summary strong{font-weight:700}
+h2{font-size:23px;font-weight:700;letter-spacing:-.01em;line-height:1.25;margin:40px 0 10px}
+p,li,td{color:var(--body)}
+p{margin:10px 0}
+strong{color:var(--ink);font-weight:600}
+ul{padding-left:22px;margin:10px 0}
+li{margin:7px 0}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:15.5px}
+th{text-align:left;padding:10px 12px;font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--line)}
+td{padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:600;color:var(--ink);width:34%}
+tr:last-child td{border-bottom:0}
+footer{background:#15162e;color:#a9adcb;font-size:14.5px;padding:28px 0}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{color:#fff}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.toc{position:static}.toc div{columns:2}.promises{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){
+ article{padding:26px 20px}
+ .toc div{columns:1}
+ table,tbody,tr,td{display:block;width:100%}
+ thead{display:none}
+ tr{padding:12px 0;border-bottom:1px solid var(--line)}
+ tr:last-child{border-bottom:0}
+ td,td:first-child{width:100%;padding:2px 0;border:0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{header,.toc,.promises,footer{display:none}.layout{display:block}article{border:0;padding:0}}
 </style>
 </head>
 <body>
-<main>
-<div class="card">
-  <h1>Tikki Privacy Policy</h1>
-  <p class="meta">App: Tikki – Daily Routine &amp; Habits (Android, package <code>com.jotonsutradhar.tikki</code>)<br>
-  Developer: Joton Sutradhar · Effective date: 4 November 2026</p>
+<header>
+  <div class="wrap">
+    <nav aria-label="Main"><a class="brand" href="home.html"><img src="assets/img/icon.png" alt="" width="42" height="42">Tikki</a><a class="back" href="home.html">Back to home</a></nav>
+    <div class="title">
+      <h1>Privacy Policy</h1>
+      <p class="meta">Tikki – Daily Routine &amp; Habits for Android<br>Package: <code>com.jotonsutradhar.tikki</code><br>Developer: Joton Sutradhar · Effective date: 9 November 2026</p>
+    </div>
+  </div>
+</header>
 
-  <div class="summary"><p><strong>In short:</strong> Tikki works entirely on your phone. It has no account and no servers, and it does not collect, sell or share your personal data. Everything you enter stays on your device unless you choose to export it.</p></div>
+<div class="wrap">
+  <div class="promises">
+    <div><b>No account</b><span>No sign-up, email or password</span></div>
+    <div><b>No ads</b><span>No advertising tools inside</span></div>
+    <div><b>No tracking</b><span>No analytics tools inside</span></div>
+    <div><b>On your phone</b><span>Your data stays on your device</span></div>
+  </div>
 
-  <h2>1. Information Tikki stores</h2>
-  <p>To work, Tikki saves the following <strong>only on your device</strong>, in the app's private storage:</p>
-  <ul>
-    <li>Your routines and events: names, times, repeat rules, categories, notes, locations, people's names and meeting links you type in.</li>
-    <li>Your daily records: what you marked done or skipped, goal progress, focus-timer minutes, checklists, mood and day notes.</li>
-    <li>Your profile: the name you enter and, if you choose one, a profile photo (copied into the app's private folder).</li>
-    <li>Your settings, such as reminders, theme and language.</li>
-    <li>If you turn on App lock: your PIN, stored only as a salted, one-way hash in Android's encrypted storage. The PIN itself is never saved.</li>
-  </ul>
-  <p>The developer has no access to any of this information. It is never uploaded to the developer or to any third-party server.</p>
+  <div class="layout">
+    <nav class="toc" aria-label="Contents">
+      <b>Contents</b>
+      <div>
+        <a href="#stores">1. What Tikki stores</a><a href="#collect">2. What we collect</a><a href="#permissions">3. Permissions</a><a href="#voice">4. Voice input</a><a href="#sharing">5. Sharing your data</a><a href="#play">6. Google Play</a><a href="#retention">7. Keeping and deleting data</a><a href="#security">8. Security</a><a href="#choices">9. Your choices</a><a href="#children">10. Children</a><a href="#changes">11. Changes</a><a href="#contact">12. Contact</a>
+      </div>
+    </nav>
 
-  <h2>2. Information we collect</h2>
-  <p>We do <strong>not</strong> collect any personal or device data. Tikki contains no analytics, advertising or tracking tools, and it has no user accounts.</p>
+    <article>
+      <div class="summary"><strong>In short:</strong> Tikki works on your phone. It has no account and no servers, and it does not collect, sell or share your personal data. What you enter stays on your device unless you choose to export or share it.</div>
 
-  <h2>3. Permissions and why they are used</h2>
-  <table>
-    <tr><th>Permission</th><th>Why</th></tr>
-    <tr><td>Notifications</td><td>To show reminders before and when your activities start, missed-activity checks and summaries.</td></tr>
-    <tr><td>Alarms &amp; reminders (exact alarms)</td><td>So reminders arrive on time, even in battery-saving mode.</td></tr>
-    <tr><td>Full-screen alarm</td><td>Only for items you set to "Ring as alarm", so the alarm can wake the screen and show Stop, Snooze and Done.</td></tr>
-    <tr><td>Run at startup</td><td>To restore your scheduled reminders after the phone restarts.</td></tr>
-    <tr><td>Vibration</td><td>For reminder alerts and button feedback.</td></tr>
-    <tr><td>Biometrics (fingerprint / face)</td><td>Optional, to unlock the app when App lock is on. Verification is handled entirely by Android; Tikki never receives your fingerprint or face data.</td></tr>
-    <tr><td>Microphone</td><td>Optional, only when you tap the microphone in Quick add to speak an activity. See section 4.</td></tr>
-    <tr><td>Photos / files</td><td>Only when you choose a profile photo or pick a backup file to restore. Tikki opens only the file you select.</td></tr>
-  </table>
+      <h2 id="stores">1. What Tikki stores</h2>
+      <p>To work, Tikki saves the following <strong>only on your device</strong>, in the app's private storage:</p>
+      <ul>
+        <li>Your routines and events: names, times, repeat rules, categories, notes, locations, people's names and meeting links you type in.</li>
+        <li>Your daily records: what you marked done or skipped, goal progress, focus-timer minutes, checklists, mood and day notes.</li>
+        <li>Your profile: the name you enter and, if you choose one, a profile photo (copied into the app's private folder).</li>
+        <li>Your settings, such as reminders, theme and language.</li>
+        <li>If you turn on App lock: your PIN, stored only as a salted, one-way hash in Android's encrypted storage. The PIN itself is never saved.</li>
+      </ul>
+      <p>The developer has no access to this information. Tikki does not upload it to the developer or to any third-party server.</p>
 
-  <h2>4. Voice input</h2>
-  <p>If you use the optional voice Quick add, your speech is converted to text by your phone's speech recognition service (for most Android phones this is provided by Google). That service may process audio under its own privacy policy. Tikki receives only the resulting text, uses it to fill in the new activity, and does not store or send the audio.</p>
+      <h2 id="collect">2. What we collect</h2>
+      <p>We do <strong>not</strong> collect any personal data through Tikki. The app contains no analytics, advertising or tracking tools, and it has no user accounts. Tikki also does not request Android's internet permission, so the app itself cannot send your data over the internet.</p>
 
-  <h2>5. Sharing your data</h2>
-  <p>Tikki does not share your data with anyone. Data leaves your device only when <strong>you</strong> choose to do so, for example:</p>
-  <ul>
-    <li>creating a backup file and sending or saving it with the app you pick (such as Google Drive or a messaging app);</li>
-    <li>sharing an activity, a monthly report image or a PDF through Android's share menu;</li>
-    <li>opening a meeting link or a map location, which opens in another app;</li>
-    <li>leaving a rating or review in the Google Play popup that Tikki may show. Google handles this popup and anything you submit under its own policies; Tikki never sees your rating, your review or whether you left one.</li>
-  </ul>
-  <p>Once shared, that copy is handled by the app or service you chose, under its own privacy policy.</p>
+      <h2 id="permissions">3. Permissions and why they are used</h2>
+      <table>
+        <thead><tr><th>Permission</th><th>Why</th></tr></thead>
+        <tbody>
+        <tr><td>Notifications</td><td>To show reminders before and when your activities start, missed-activity checks and summaries.</td></tr>
+        <tr><td>Alarms &amp; reminders (exact alarms)</td><td>So reminders arrive on time, even in battery-saving mode.</td></tr>
+        <tr><td>Full-screen alarm</td><td>Only for items you set to "Ring as alarm", so the alarm can wake the screen and show Stop, Snooze and Done.</td></tr>
+        <tr><td>Run at startup</td><td>To restore your scheduled reminders after the phone restarts.</td></tr>
+        <tr><td>Vibration</td><td>For reminder alerts and button feedback.</td></tr>
+        <tr><td>Biometrics (fingerprint / face)</td><td>Optional, to unlock the app when App lock is on. Verification is handled entirely by Android; Tikki never receives your fingerprint or face data.</td></tr>
+        <tr><td>Microphone</td><td>Optional, only when you tap the microphone in Quick add to speak an activity. See section 4.</td></tr>
+        <tr><td>Photos / files</td><td>Only when you choose a profile photo or pick a backup file to restore. Tikki opens only the file you select.</td></tr>
+        <tr><td>Background work (foreground service, wake lock, network status)</td><td>Included by Android's standard background task system. It lets scheduled work run reliably. Network status only tells that system whether the phone is connected; it does not give Tikki internet access.</td></tr>
+        </tbody>
+      </table>
 
-  <h2>6. Data retention and deletion</h2>
-  <p>Your data stays on your device until you delete it. You can erase everything at any time in <em>Settings → Erase all data</em>, or by uninstalling Tikki, which removes all of its stored data from your phone. Backup files you exported are kept wherever you saved them until you delete them.</p>
+      <h2 id="voice">4. Voice input</h2>
+      <p>If you use the optional voice Quick add, your speech is converted to text by your phone's speech recognition service (on most Android phones this is provided by Google). That service may process audio under its own privacy policy. Tikki receives only the resulting text, uses it to fill in the new activity, and does not store or send the audio.</p>
 
-  <h2>7. Security</h2>
-  <p>Data is kept in the app's private storage, which other apps cannot read. You can add App lock with a PIN or fingerprint/face and hide reminder text on the lock screen. Please keep exported backup files somewhere safe, as anyone with the file can read its contents.</p>
+      <h2 id="sharing">5. Sharing your data</h2>
+      <p>Tikki does not share your data with anyone. Data leaves your device only when <strong>you</strong> choose to do so, for example:</p>
+      <ul>
+        <li>creating a backup file and sending or saving it with the app you pick (such as Google Drive or a messaging app);</li>
+        <li>sharing an activity, a monthly report image or a PDF through Android's share menu;</li>
+        <li>opening a meeting link or a map location, which opens in another app.</li>
+      </ul>
+      <p>Once shared, that copy is handled by the app or service you chose, under its own privacy policy.</p>
 
-  <h2>8. Children</h2>
-  <p>Tikki is a general productivity app and is not directed at children under 13. Because Tikki does not collect personal data, no personal data is collected from children.</p>
+      <h2 id="play">6. Google Play</h2>
+      <p>Tikki is distributed through Google Play. Google handles downloads, updates and ratings under its own privacy policy.</p>
+      <ul>
+        <li><strong>Ratings and reviews:</strong> Tikki may show Google Play's review popup. Google handles this popup and anything you submit. Tikki never sees your rating, your review or whether you left one. Reviews you post publicly on Google Play can be read by the developer and others, as on any app.</li>
+        <li><strong>Statistics:</strong> Google Play gives developers statistics about their apps, such as install numbers, and technical crash and performance reports. Tikki does not add your routines, notes or other content to these.</li>
+      </ul>
 
-  <h2>9. Changes to this policy</h2>
-  <p>If this policy changes, the updated version will be published at this same address with a new effective date. If a change ever involved collecting data, it would be explained in the app before taking effect.</p>
+      <h2 id="retention">7. Keeping and deleting data</h2>
+      <p>Your data stays on your device until you delete it. You can erase everything at any time in <em>Settings → Erase all data</em>, or by uninstalling Tikki, which removes its stored data from your phone. Backup files you exported are kept wherever you saved them until you delete them.</p>
 
-  <h2>10. Contact</h2>
-  <p>Questions about this policy or your privacy: <strong>Joton Sutradhar</strong>, <a href="mailto:jotonsutradharjoy@gmail.com">jotonsutradharjoy@gmail.com</a>.</p>
+      <h2 id="security">8. Security</h2>
+      <p>Data is kept in the app's private storage, which other apps cannot read. You can add App lock with a PIN or fingerprint/face and hide reminder text on the lock screen. Please keep exported backup files somewhere safe, as anyone with the file can read its contents.</p>
+
+      <h2 id="choices">9. Your choices</h2>
+      <p>Because your data is on your own device, you control it directly. You can view and edit it in the app, export it to a backup file, erase it, and turn off notifications, alarms or the microphone in your phone's settings. We hold no copy to access, correct or delete on your behalf.</p>
+
+      <h2 id="children">10. Children</h2>
+      <p>Tikki is a general productivity app and is not directed at children under 13. Because Tikki does not collect personal data, no personal data is collected from children.</p>
+
+      <h2 id="changes">11. Changes to this policy</h2>
+      <p>If this policy changes, the updated version will be published at this same address with a new effective date. If a change ever involved collecting data, it would be explained in the app before taking effect.</p>
+
+      <h2 id="contact">12. Contact</h2>
+      <p>Questions about this policy or your privacy: <strong>Joton Sutradhar</strong>, <a href="mailto:jotonsutradharjoy@gmail.com">jotonsutradharjoy@gmail.com</a>.</p>
+    </article>
+  </div>
 </div>
-<footer>© 2026 Tikki</footer>
-</main>
+<footer><div class="wrap"><span>© 2026 Tikki · Joton Sutradhar</span><a href="home.html">Tikki home</a></div></footer>
 </body>
 </html>

@@ -3,50 +3,274 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tikki – Daily Routine &amp; Habits</title>
-<meta name="description" content="Tikki is an Android app to plan a repeating day, tick it off and see your consistency.">
+<title>Tikki – Daily Routine &amp; Habits for Android</title>
+<meta name="description" content="Plan a day that repeats, get reminded on time and see how consistent you really are. Tikki needs no account, shows no ads and keeps your data on your phone.">
+<meta property="og:title" content="Tikki – Daily Routine &amp; Habits">
+<meta property="og:description" content="Plan it. Tick it. Repeat it. No account, no ads, and your data stays on your phone.">
+<meta property="og:image" content="https://jotonsd.github.io/tikki-privacy/assets/img/icon.png">
+<meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="assets/img/icon.png">
 <style>
-  :root { --text:#0f1222; --muted:#5b6078; --accent:#4f46e5; --bg:#f6f7fb; --card:#fff; --line:#e6e8f0; }
-  * { box-sizing: border-box; }
-  body { margin:0; background:var(--bg); color:var(--text);
-         font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
-  main { max-width: 760px; margin: 0 auto; padding: 40px 20px 64px; }
-  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding: 32px 28px; }
-  h1 { font-size: 30px; line-height:1.2; margin: 0 0 6px; letter-spacing:-0.4px; }
-  .meta { color:var(--muted); margin: 0 0 24px; }
-  h2 { font-size: 19px; margin: 32px 0 8px; }
-  p, li { color: #2a2e44; }
-  ul { padding-left: 22px; margin: 8px 0; }
-  li { margin: 4px 0; }
-  a { color: var(--accent); }
-  footer { color:var(--muted); font-size: 13px; text-align:center; margin-top: 20px; }
-  @media (max-width: 520px) { .card { padding: 24px 18px; } h1 { font-size: 25px; } }
+@font-face{font-family:Poppins;font-weight:500;font-display:swap;src:url(assets/fonts/Poppins-500.ttf)}
+@font-face{font-family:Poppins;font-weight:600;font-display:swap;src:url(assets/fonts/Poppins-600.ttf)}
+@font-face{font-family:Poppins;font-weight:700;font-display:swap;src:url(assets/fonts/Poppins-700.ttf)}
+@font-face{font-family:Poppins;font-weight:800;font-display:swap;src:url(assets/fonts/Poppins-800.ttf)}
+:root{--ink:#14162b;--muted:#5d6280;--indigo:#4f46e5;--violet:#7c3aed;--purple:#a855f7;--bg:#f4f4fb;--card:#fff;--line:#e6e7f2;--green:#10b981;--grad:linear-gradient(120deg,#4f46e5,#7c3aed 55%,#a855f7)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:500 17px/1.65 Poppins,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{margin:0;line-height:1.15;letter-spacing:-.02em;font-weight:800}
+p{margin:0}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:16px;font-weight:700;text-decoration:none;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #fbbf24;outline-offset:3px}
+.btn-white{background:#fff;color:var(--indigo);box-shadow:0 12px 30px rgba(20,10,70,.28)}
+.btn-ghost{color:#fff;border:1.5px solid rgba(255,255,255,.45)}
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--grad);color:#fff;border-radius:0 0 44px 44px}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.08)}
+.hero::before{width:620px;height:620px;right:-160px;top:-240px}
+.hero::after{width:380px;height:380px;left:-130px;bottom:-170px}
+nav{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:24px 0}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:23px;text-decoration:none}
+.brand img{width:42px;height:42px;border-radius:12px}
+.links{display:flex;gap:28px;font-size:15px;font-weight:600}
+.links a{text-decoration:none;opacity:.9}
+.links a:hover{opacity:1;text-decoration:underline}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:36px 0 84px}
+.eyebrow{display:inline-block;padding:6px 15px;border-radius:99px;background:rgba(255,255,255,.16);font-size:14px;font-weight:600}
+h1{font-size:clamp(42px,6vw,68px);margin:20px 0}
+.lead{font-size:19px;color:#ece9ff;max-width:33em}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin:32px 0 18px}
+.note{font-size:14px;color:#ddd8ff}
+.phones{position:relative;width:500px;max-width:100%;height:660px;margin-inline:auto}
+.phone{position:absolute;padding:1%;background:linear-gradient(145deg,#5b5d80,#1b1c33 35%,#40425f 70%,#20213a);border-radius:8%/3.6%;box-shadow:0 34px 70px rgba(16,8,70,.42)}
+.phone::before,.phone::after{content:"";position:absolute;right:-.9%;width:1.2%;border-radius:0 3px 3px 0;background:linear-gradient(#5b5d80,#2a2b47)}
+.phone::before{top:15%;height:5%}
+.phone::after{top:23%;height:10%}
+.screen{background:#05060d;padding:2.3%;border-radius:7%/3.15%}
+.display{position:relative;container-type:inline-size;overflow:hidden;border-radius:5%/2.25%}
+.display img{width:100%}
+.display::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.1),transparent 26%);pointer-events:none}
+.sb{position:relative;display:flex;align-items:center;justify-content:space-between;height:8.5cqw;padding:0 7cqw;font-size:3.6cqw;font-weight:600;color:#1a1b30}
+.sb.dark{color:#fff}
+.sb::after{content:"";position:absolute;left:50%;top:50%;width:3.9cqw;height:3.9cqw;transform:translate(-50%,-50%);border-radius:50%;background:#05060d;box-shadow:inset 0 0 0 .5cqw #1d1f36}
+.sb svg{height:3.5cqw;width:auto;fill:currentColor;display:block}
+.phones .p1{width:56%;left:0;top:0}
+.phones .p2{width:46%;left:57%;top:10%;transform:rotate(4deg)}
+/* trust */
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:-34px;position:relative;z-index:3}
+.trust div{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 14px 34px rgba(40,30,120,.08)}
+.trust b{display:block;font-size:18px;font-weight:700}
+.trust span{font-size:14.5px;color:var(--muted)}
+section{padding:92px 0 0}
+.head{max-width:680px;margin:0 auto 44px;text-align:center}
+.head h2,.show h2{font-size:clamp(31px,4vw,44px)}
+.head p{margin-top:12px;color:var(--muted)}
+.kicker{color:var(--indigo);font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+/* features */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.f{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px}
+.ic{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;margin-bottom:16px;color:#fff}
+.ic svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.f h3{font-size:19px;font-weight:700;letter-spacing:-.01em;margin-bottom:7px}
+.f p{font-size:15.5px;color:var(--muted)}
+/* showcase */
+.show{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.show+.show{margin-top:84px}
+.show.flip .art{order:2}
+.art{position:relative;display:grid;place-items:center;padding:8px 0 46px}
+.art::after{content:"";position:absolute;left:50%;bottom:12px;width:230px;height:30px;margin-left:-115px;border-radius:50%;background:rgba(58,40,170,.34);filter:blur(16px)}
+.art .phone{position:relative;z-index:1;width:min(275px,100%);box-shadow:0 44px 70px -18px rgba(45,30,140,.42),0 18px 34px rgba(30,20,90,.16)}
+.show p{color:var(--muted);margin-top:14px}
+.show ul{list-style:none;margin:22px 0 0;padding:0}
+.show li{position:relative;padding-left:34px;margin:11px 0;font-size:16px}
+.show li::before{content:"";position:absolute;left:0;top:4px;width:22px;height:22px;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/15px no-repeat}
+/* privacy */
+.band{background:#15162e;color:#fff;border-radius:36px;padding:60px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.band h2{font-size:clamp(30px,3.6vw,41px)}
+.band p{color:#c9cbe4;margin-top:14px}
+.band ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.band li{background:rgba(255,255,255,.07);border-radius:14px;padding:14px 18px;font-size:15.5px}
+.band a{color:#c4b5fd}
+/* languages */
+.chips{display:flex;flex-wrap:wrap;gap:11px;justify-content:center;max-width:820px;margin-inline:auto}
+.chips span{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:9px 20px;font-size:16px}
+/* faq */
+.faq{max-width:780px;margin-inline:auto}
+details{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:0 24px;margin-bottom:12px}
+summary{cursor:pointer;padding:20px 0;font-weight:700}
+details p{color:var(--muted);padding-bottom:22px;font-size:16px}
+/* end */
+.end{margin-top:92px;background:var(--grad);color:#fff;text-align:center;padding:76px 20px}
+.end img{width:84px;height:84px;border-radius:22px;margin:0 auto 22px;box-shadow:0 14px 30px rgba(20,10,70,.3)}
+.end h2{font-size:clamp(34px,5vw,52px)}
+.end p{color:#ece9ff;margin:12px 0 28px}
+footer{background:#15162e;color:#a9adcb;font-size:14.5px;padding:30px 0}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{color:#fff}
+@media(max-width:940px){
+ .hero-grid{grid-template-columns:1fr;text-align:center}
+ .lead{margin-inline:auto}.cta{justify-content:center}
+ .grid{grid-template-columns:repeat(2,1fr)}
+ .trust{grid-template-columns:repeat(2,1fr)}
+ .show,.band{grid-template-columns:1fr;gap:36px}
+ .show.flip .art{order:0}
+ .band{padding:40px 26px}
+}
+@media(max-width:620px){
+ body{font-size:16px}
+ .links a:not(:last-child){display:none}
+ .grid{grid-template-columns:1fr}
+ .phones{width:min(350px,100%);height:auto;aspect-ratio:350/460}
+ .art .phone{width:min(250px,100%)}
+ section{padding-top:68px}
+ .btn{width:100%}
+}
+/* motion */
+@keyframes rise{from{opacity:0;transform:translateY(24px)}}
+@keyframes float1{50%{transform:translateY(-12px)}}
+@keyframes float2{0%,100%{transform:rotate(4deg)}50%{transform:rotate(4deg) translateY(11px)}}
+@keyframes float3{50%{transform:translateY(-14px)}}
+@keyframes breathe{50%{transform:scaleX(.78);opacity:.55}}
+@keyframes drift{to{transform:translate(-46px,34px) scale(1.08)}}
+.hero::before{animation:drift 13s ease-in-out infinite alternate}
+.hero::after{animation:drift 17s ease-in-out infinite alternate-reverse}
+.eyebrow,h1,.lead,.cta,.note{animation:rise .75s cubic-bezier(.2,.7,.2,1) both}
+h1{animation-delay:.08s}.lead{animation-delay:.16s}.cta{animation-delay:.24s}.note{animation-delay:.32s}
+.phones{animation:rise .95s .18s cubic-bezier(.2,.7,.2,1) both}
+.phones .p1{animation:float1 6.5s ease-in-out infinite}
+.phones .p2{animation:float2 7.5s ease-in-out infinite}
+.js .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.js .show .art.reveal{transform:translateX(-56px) rotate(-3deg)}
+.js .show.flip .art.reveal{transform:translateX(56px) rotate(3deg)}
+.js .reveal.in,.js .show .art.reveal.in,.js .show.flip .art.reveal.in{opacity:1;transform:none}
+.art .phone{animation:float3 6.5s ease-in-out infinite}
+.art::after{animation:breathe 6.5s ease-in-out infinite}
+.show:nth-child(2) .art .phone,.show:nth-child(2) .art::after{animation-delay:-2.2s}
+.show:nth-child(3) .art .phone,.show:nth-child(3) .art::after{animation-delay:-4.4s}
+.f{transition:box-shadow .25s,border-color .25s}
+.js .f.reveal.in:hover,.f:hover{transform:translateY(-6px);border-color:#c9c5fb;box-shadow:0 20px 40px rgba(60,40,170,.13)}
+.ic{transition:transform .3s cubic-bezier(.3,1.6,.5,1)}
+.f:hover .ic{transform:rotate(-7deg) scale(1.1)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<main>
-<div class="card">
-  <h1>Tikki</h1>
-  <p class="meta">Daily Routine &amp; Habits, for Android</p>
+<header class="hero">
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="#top"><img src="assets/img/icon.png" alt="" width="42" height="42">Tikki</a>
+      <div class="links"><a href="#features">Features</a><a href="#privacy">Privacy</a><a href="#faq">FAQ</a><a href="https://jotonsd.github.io/tikki-privacy/">Privacy policy</a></div>
+    </nav>
+    <div class="hero-grid" id="top">
+      <div>
+        <span class="eyebrow">Daily routine &amp; habits for Android</span>
+        <h1>Plan it. Tick it.<br>Repeat it.</h1>
+        <p class="lead">Tikki helps you plan a day that repeats, get reminded on time and see how consistent you really are.</p>
+        <div class="cta">
+          <a class="btn btn-white" href="https://play.google.com/store/apps/details?id=com.jotonsutradhar.tikki">Get Tikki on Google Play</a>
+          <a class="btn btn-ghost" href="#features">See what it does</a>
+        </div>
+        <p class="note">Free to download · Android 8.0 and later</p>
+      </div>
+      <div class="phones">
+        <div class="phone p2"><div class="screen"><div class="display"><div class="sb dark" style="background:#2d2c54"><span>10:32</span><svg viewBox="0 0 46 16" aria-hidden="true"><path d="M0 16 12 4v12z"/><rect x="18" y="6" width="3" height="10" rx="1"/><rect x="23" y="3" width="3" height="13" rx="1"/><rect x="31" y="1" width="13" height="15" rx="3"/><rect x="34" y="-2" width="7" height="4" rx="1"/></svg></div><img src="assets/img/dashboard-dark.webp" alt="Tikki dashboard in dark mode" width="620" height="1343" loading="lazy"></div></div></div>
+        <div class="phone p1"><div class="screen"><div class="display"><div class="sb" style="background:#dbdaf5"><span>10:32</span><svg viewBox="0 0 46 16" aria-hidden="true"><path d="M0 16 12 4v12z"/><rect x="18" y="6" width="3" height="10" rx="1"/><rect x="23" y="3" width="3" height="13" rx="1"/><rect x="31" y="1" width="13" height="15" rx="3"/><rect x="34" y="-2" width="7" height="4" rx="1"/></svg></div><img src="assets/img/dashboard.webp" alt="Tikki dashboard showing 57 percent of today done and lunch up next" width="620" height="1343"></div></div></div>
+      </div>
+    </div>
+  </div>
+</header>
 
-  <p>Tikki helps you plan a repeating day, tick it off and see how consistent you are. It works on your phone without an account, and it has no ads or analytics.</p>
+<main class="wrap">
+  <div class="trust">
+    <div><b>No account</b><span>Open it and start planning.</span></div>
+    <div><b>No ads</b><span>Nothing between you and your day.</span></div>
+    <div><b>No tracking</b><span>No analytics tools inside.</span></div>
+    <div><b>Works offline</b><span>Your data stays on your phone.</span></div>
+  </div>
 
-  <h2>What Tikki does</h2>
-  <ul>
-    <li>Plan routines and one-time events, with flexible repeats, goals and checklists.</li>
-    <li>Get reminders on time, or set an item to ring as an alarm with Stop, Snooze and Done.</li>
-    <li>Mark items done or skipped, and use a focus timer.</li>
-    <li>Follow your streaks, charts, badges and monthly reports.</li>
-    <li>Use it in English or Bangla, in light or dark mode, with a home screen widget.</li>
-  </ul>
+  <section id="features">
+    <div class="head"><div class="kicker">Features</div><h2>Everything your routine needs</h2><p>From the first alarm of the morning to the report at the end of the month.</p></div>
+    <div class="grid">
+      <article class="f"><div class="ic" style="background:#4f46e5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 2l4 4-4 4"/><path d="M3 11V9a3 3 0 0 1 3-3h15"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v2a3 3 0 0 1-3 3H3"/></svg></div><h3>Routines that fit your life</h3><p>Repeat daily, on chosen days, or simply a few times a week or month.</p></article>
+      <article class="f"><div class="ic" style="background:#f97316"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2 2"/><path d="M5 3L2 6"/><path d="M19 3l3 3"/></svg></div><h3>Real alarms</h3><p>Set any item to ring as an alarm, with Stop, Snooze and Done right there.</p></article>
+      <article class="f"><div class="ic" style="background:#7c3aed"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M10.3 21a2 2 0 0 0 3.4 0"/></svg></div><h3>Reminders on time</h3><p>Before things start and when they end, all scheduled on your phone.</p></article>
+      <article class="f"><div class="ic" style="background:#10b981"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div><h3>Goals and checklists</h3><p>Set a time or count goal, or add a checklist, to any routine or event.</p></article>
+      <article class="f"><div class="ic" style="background:#ec4899"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c1 4 6 6 6 12a6 6 0 0 1-12 0c0-3 2-4 2-7 2 1 3 2 4-5z"/></svg></div><h3>Streaks, badges, challenges</h3><p>See your run of good days and earn badges along the way.</p></article>
+      <article class="f"><div class="ic" style="background:#0ea5e9"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M8 16v-5"/><path d="M13 16V7"/><path d="M18 16v-3"/></svg></div><h3>Charts and monthly reports</h3><p>Understand your month, then share it as an image or PDF.</p></article>
+      <article class="f"><div class="ic" style="background:#14b8a6"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="14" r="8"/><path d="M12 10v4"/><path d="M9 2h6"/></svg></div><h3>Focus timer</h3><p>Start a focused session from the item you are working on.</p></article>
+      <article class="f"><div class="ic" style="background:#6366f1"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v4"/></svg></div><h3>Quick add and templates</h3><p>Type or say it, or start from a ready-made routine.</p></article>
+      <article class="f"><div class="ic" style="background:#64748b"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg></div><h3>Pause days</h3><p>Holiday or sick day? Pause it without breaking your streak.</p></article>
+      <article class="f"><div class="ic" style="background:#8b5cf6"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></div><h3>Home screen widget</h3><p>Keep your day in view without opening the app.</p></article>
+      <article class="f"><div class="ic" style="background:#334155"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></div><h3>Light and dark</h3><p>A clean design that follows your phone or your own choice.</p></article>
+      <article class="f"><div class="ic" style="background:#ef4444"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><h3>App lock and backup</h3><p>Lock with a PIN or fingerprint, and back up to a file any time.</p></article>
+    </div>
+  </section>
 
-  <h2>Privacy</h2>
-  <p>Read the <a href="https://jotonsd.github.io/tikki-privacy/">Tikki Privacy Policy</a>.</p>
+  <section>
+    <div class="show">
+      <div class="art"><div class="phone"><div class="screen"><div class="display"><div class="sb" style="background:#f2f3f8"><span>10:32</span><svg viewBox="0 0 46 16" aria-hidden="true"><path d="M0 16 12 4v12z"/><rect x="18" y="6" width="3" height="10" rx="1"/><rect x="23" y="3" width="3" height="13" rx="1"/><rect x="31" y="1" width="13" height="15" rx="3"/><rect x="34" y="-2" width="7" height="4" rx="1"/></svg></div><img src="assets/img/today.webp" alt="Tikki's day list with finished items ticked and lunch next" width="620" height="1343" loading="lazy"></div></div></div></div>
+      <div><div class="kicker">Your day</div><h2>Know what's next, then tick it off</h2><p>One clear list for the whole day, with what's coming up right at the top.</p><ul><li>Mark items done or skipped in one tap</li><li>Filter by upcoming, done or missed</li><li>Add a mood and a note about your day</li></ul></div>
+    </div>
+    <div class="show flip">
+      <div class="art"><div class="phone"><div class="screen"><div class="display"><div class="sb" style="background:#f2f3f8"><span>10:32</span><svg viewBox="0 0 46 16" aria-hidden="true"><path d="M0 16 12 4v12z"/><rect x="18" y="6" width="3" height="10" rx="1"/><rect x="23" y="3" width="3" height="13" rx="1"/><rect x="31" y="1" width="13" height="15" rx="3"/><rect x="34" y="-2" width="7" height="4" rx="1"/></svg></div><img src="assets/img/calendar.webp" alt="Tikki calendar with a week of days marked green" width="620" height="1343" loading="lazy"></div></div></div></div>
+      <div><div class="kicker">Your month</div><h2>See how every day went</h2><p>The calendar colours each finished day, so patterns show up at a glance.</p><ul><li>Green, orange or red by how much you finished</li><li>Coloured dots show what's planned</li><li>Tap any day to see its details</li></ul></div>
+    </div>
+    <div class="show">
+      <div class="art"><div class="phone"><div class="screen"><div class="display"><div class="sb" style="background:#f2f3f8"><span>10:32</span><svg viewBox="0 0 46 16" aria-hidden="true"><path d="M0 16 12 4v12z"/><rect x="18" y="6" width="3" height="10" rx="1"/><rect x="23" y="3" width="3" height="13" rx="1"/><rect x="31" y="1" width="13" height="15" rx="3"/><rect x="34" y="-2" width="7" height="4" rx="1"/></svg></div><img src="assets/img/progress.webp" alt="Tikki progress screen with an 8 day streak and bar chart" width="620" height="1343" loading="lazy"></div></div></div></div>
+      <div><div class="kicker">Your progress</div><h2>Build streaks you can see</h2><p>Watch your consistency grow, day by day and category by category.</p><ul><li>Current and best streaks</li><li>Weekly charts and an activity graph</li><li>Weekly reviews and monthly reports</li></ul></div>
+    </div>
+  </section>
 
-  <h2>Contact</h2>
-  <p>Joton Sutradhar, <a href="mailto:jotonsutradharjoy@gmail.com">jotonsutradharjoy@gmail.com</a></p>
-</div>
-<footer>© 2026 Tikki</footer>
+  <section id="privacy">
+    <div class="band">
+      <div><h2>Your routine is your business</h2><p>Tikki has no account and no servers. What you enter is stored on your phone, and it leaves only when you choose to share or export it.</p><p><a href="https://jotonsd.github.io/tikki-privacy/">Read the full privacy policy</a></p></div>
+      <ul><li>No sign-up, email or password</li><li>No ads or analytics tools</li><li>Optional PIN or fingerprint lock</li><li>Erase everything whenever you want</li></ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="head"><div class="kicker">Languages</div><h2>Tikki speaks your language</h2><p>Use it in any of these 13 languages.</p></div>
+    <div class="chips"><span lang="en">English</span><span lang="bn">বাংলা</span><span lang="hi">हिन्दी</span><span lang="es">Español</span><span lang="pt">Português</span><span lang="id">Bahasa Indonesia</span><span lang="ar" dir="rtl">العربية</span><span lang="ur" dir="rtl">اردو</span><span lang="ru">Русский</span><span lang="tr">Türkçe</span><span lang="ja">日本語</span><span lang="fr">Français</span><span lang="de">Deutsch</span></div>
+  </section>
+
+  <section id="faq">
+    <div class="head"><div class="kicker">FAQ</div><h2>Good to know</h2></div>
+    <div class="faq">
+      <details open><summary>Is Tikki free?</summary><p>Yes, Tikki is free to download and shows no ads.</p></details>
+      <details><summary>Do I need an account?</summary><p>No. There is no sign-up. Open the app and start planning.</p></details>
+      <details><summary>Where is my data kept?</summary><p>On your phone, in the app's private storage. The developer cannot see it.</p></details>
+      <details><summary>What if I change phones?</summary><p>Create a backup file in Settings, move it to your new phone and restore it there.</p></details>
+      <details><summary>Which phones does it work on?</summary><p>Android phones running Android 8.0 or later.</p></details>
+    </div>
+  </section>
 </main>
+
+<div class="end">
+  <img src="assets/img/icon.png" alt="" width="84" height="84">
+  <h2>Make today count</h2>
+  <p>Start planning your day with Tikki.</p>
+  <a class="btn btn-white" href="https://play.google.com/store/apps/details?id=com.jotonsutradhar.tikki">Get Tikki on Google Play</a>
+</div>
+<footer><div class="wrap"><span>© 2026 Tikki · Joton Sutradhar</span><span><a href="https://jotonsd.github.io/tikki-privacy/">Privacy policy</a> · <a href="mailto:jotonsutradharjoy@gmail.com">Contact</a></span></div></footer>
+<script>
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||!('IntersectionObserver' in window))return;
+  document.documentElement.classList.add('js');
+  var groups=['.trust>div','.head','.f','.show>*','.band','.chips','details','.end>*'];
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return;
+    e.target.classList.add('in');io.unobserve(e.target);
+    setTimeout(function(){e.target.style.removeProperty('--d');e.target.style.transitionDelay='0s'},1000);
+  })},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+  groups.forEach(function(q){document.querySelectorAll(q).forEach(function(el,i){
+    el.classList.add('reveal');el.style.setProperty('--d',(i%3*.08)+'s');io.observe(el);
+  })});
+})();
+</script>
 </body>
 </html>
